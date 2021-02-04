@@ -134,7 +134,7 @@ const fadeIn = keyframes`
 
 const StyledNuestrosServicios = styled.section`
     display: flex;
-    padding: 48px 0;
+    padding: 2rem 0;
     background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
     ${'' /* background-image: url('./classy-fabric.png'); */}
     background-color: rgba(0,0,0,.6);
@@ -195,6 +195,7 @@ const StyledNuestrosServicios = styled.section`
         }
         .service-description {
             background: white;
+            overflow-y: auto;
             backdrop-filter: blur(10px)
             flex-grow: 1;
             .service-description-inner-wrp {
