@@ -145,6 +145,8 @@ const StyledNuestrosServicios = styled.section`
             flex-direction: column;
             .service-sidebar {
                 height: unset !important;
+                padding-top: 8px !important;
+                margin: 0;
                 ul {
                     display: flex;
                     flex-wrap: wrap;
@@ -209,7 +211,10 @@ const StyledNuestrosServicios = styled.section`
             background-image: ${({selectedService}) => (
                 selectedService == 'mucamas' ? 'url(./mucamas_nt.png)' :
                 selectedService == 'cuidadoras' ? 'url(./cuidadoras_nt.png)' :
-                selectedService == 'niñeras' ? 'url(./niñeras_nt.png)' : ''
+                selectedService == 'niñeras' ? 'url(./niñeras_nt.png)' : 
+                selectedService == 'caseros' ? 'url(./niñeras_nt.png)' : 
+                selectedService == 'cocineras' ? 'url(./niñeras_nt.png)' : 
+                selectedService == 'choferes' ? 'url(./niñeras_nt.png)' : ''
             )};
             background-position: ${({selectedService}) => (
                 selectedService == 'mucamas' ? 'center' :

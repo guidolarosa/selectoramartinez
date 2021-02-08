@@ -101,8 +101,9 @@ const StyledHeader = styled.header`
     }
     .lower-header {
         height: 46px;
-        & > .container {
-            @media screen and (max-width: 1070px) {
+        @media screen and (max-width: 1070px) {
+            border-bottom: 1px solid gray;
+            & > .container {
                 width: unset;
             }
         }
