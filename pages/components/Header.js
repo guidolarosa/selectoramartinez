@@ -38,6 +38,7 @@ export default function Header() {
                 <nav>
                     <span className="mobile-menu-trigger">
                         <Hamburger toggled={isOpen} toggle={setIsOpen} size={18}/>
+                        <span onClick={() => {setIsOpen(!isOpen)}}>Ver menú</span>
                     </span>
                     <ul className={`${isOpen ? 'mobile-show' : ''}`}>
                         {navigation.map((navItem) => (
@@ -104,6 +105,7 @@ const StyledHeader = styled.header`
     .lower-header {
         height: 46px;
         @media screen and (max-width: 1070px) { 
+            border-bottom: 1px solid rgba(255,255,255, 0.2);
             & > .container {
                 width: unset !important;
             }
@@ -158,6 +160,9 @@ const StyledHeader = styled.header`
             justify-content: center;
             @media screen and (min-width: 1070px) { 
                 display: none;
+            }
+            span {
+                cursor: pointer;
             }
         }
     }

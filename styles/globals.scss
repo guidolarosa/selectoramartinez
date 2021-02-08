@@ -8,13 +8,7 @@
     width: 1080px;
     margin: 0 auto;
     @media screen and (max-width: 1070px) {
-        width: 960px;
-    }
-    @media screen and (max-width: 960px) {
-        width: 720px;
-    }
-    @media screen and (max-width: 720px) {
-        width: 540px;
+        width: 100%;
     }
 }
 

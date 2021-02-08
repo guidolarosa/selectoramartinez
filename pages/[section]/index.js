@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import NuestrosServicios from '../../sections/NuestrosServicios';
 import QuienesSomos from '../../sections/QuienesSomos';
 import MetodologiaDeTrabajo from '../../sections/MetodologiaDeTrabajo';
+import EntrevistaPersonal from '../../sections/EntrevistaPersonal';
+import TrabajeConNosotros from '../../sections/TrabajeConNosotros';
 import {labels} from '../../utils/uiconstants';
 import FloatingLinks from './../components/FloatingLinks';
 
@@ -26,7 +28,13 @@ export default function Home() {
                         <QuienesSomos />
                     ) : sanitizedPath == 'metodologia-de-trabajo' ? (
                         <MetodologiaDeTrabajo />
-                    ) : ''
+                    ) : sanitizedPath == 'entrevista-personal' ? (
+                        <EntrevistaPersonal />
+                    ) : sanitizedPath == 'trabaje-con-nosotros' ? (
+                        <TrabajeConNosotros />
+                    ) : (
+                        <span>Página no encontrada</span>
+                    )
                 }
             </main>
         </div>

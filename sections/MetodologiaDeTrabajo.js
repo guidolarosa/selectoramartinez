@@ -1,15 +1,7 @@
-import {useState} from 'react';
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
 
 export default function NuestrosServicios() {
-    const [selectedService, setSelectedService] = useState('mucamas');
-
-    const handleServiceClick = (service) => {
-        setSelectedService(service);
-    };
-
-
     return (
         <StyledMetodologiaDeTrabajo className="container" Colors={Colors}>
             <div className="metodologia-de-trabajo container regular-padding">

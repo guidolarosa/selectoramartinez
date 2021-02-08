@@ -225,7 +225,7 @@ const StyledNuestrosServicios = styled.section`
             background-size: cover;
             background-repeat: no-repeat;
             filter: grayscale(.5);
-            min-width: 180px;
+            min-width: 260px;
             height: 100%;
             position: relative;
         }
