@@ -35,10 +35,12 @@ export default function Header() {
         </div>
         <div className="lower-header container">
             <div className="container regular-padding">
-                <nav>
+                <nav className={isOpen ? 'show-underlay' : ''}>
                     <span className="mobile-menu-trigger">
                         <Hamburger toggled={isOpen} toggle={setIsOpen} size={18}/>
-                        <span onClick={() => {setIsOpen(!isOpen)}}>Ver menú</span>
+                        <span onClick={() => {setIsOpen(!isOpen)}}>
+                            {!isOpen ? 'Ver menú' : 'Cerrar menú'}
+                        </span>
                     </span>
                     <ul className={`${isOpen ? 'mobile-show' : ''}`}>
                         {navigation.map((navItem) => (
@@ -104,10 +106,33 @@ const StyledHeader = styled.header`
     }
     .lower-header {
         height: 46px;
+        position: relative;
         @media screen and (max-width: 1070px) { 
-            border-bottom: 1px solid rgba(255,255,255, 0.2);
+            border-bottom: 1px solid rgba(255,255,255,.2);
             & > .container {
                 width: unset !important;
+            }
+            nav {
+                position: relative;
+                background: black;
+                &:after {
+                    position: absolute;
+                    content: '';
+                    background: black;
+                    width: 100vw;
+                    height: 100vh;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                    backdrop-filter: blur(5px);
+                    opacity: 0;
+                    transition: 0.5s ease-in-out opacity;
+                }
+                &.show-underlay {
+                    &:after {
+                        opacity: .5;
+                    }
+                }
             }
         }
         ul {
@@ -116,23 +141,24 @@ const StyledHeader = styled.header`
             justify-content: space-between;
             z-index: 100;
             @media screen and (max-width: 1070px) { 
-                display: none;
                 width: unset;
-                padding: 0 24px;
+                padding: 24px 0;
+                position: absolute;
+                width: 100%;
+                right: 100%;
+                display: block;
+                transition: 0.5s ease-in-out all;
+                text-align: center;
+                background: black;
+                box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
+                margin-top: -1px;
+                top: calc(100% - 1px);
                 li {
-                    margin-left: 24px;
+                    margin: 0;
+                    font-size: 16px !important;
                 }
                 &.mobile-show {
-                    display: block;
-                    background: black;
-                    text-align: center;
-                    padding: 24px 0;
-                    margin-top: -1px;
-                    box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
-                    li {
-                        margin: 0;
-                        font-size: 14px;
-                    }
+                    right: 0%;
                 }
             }
             li {
