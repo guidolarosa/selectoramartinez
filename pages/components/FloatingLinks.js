@@ -42,6 +42,13 @@ const StyledFloatingLinks = styled.div`
     flex-direction: column;
     height: 170px;
     z-index: 1;
+    @media screen and (max-width: 1070px) {
+        top: unset;
+        bottom: -3px;
+        flex-direction: row;
+        right: 20px;
+        height: unset;
+    }
     .social-link {
         background: ${({Colors}) => (Colors.mainBlue)};
         width: 50px;

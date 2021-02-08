@@ -15,7 +15,7 @@ export default function Home() {
     )
 }
   return (
-    <div className="root-container">
+    <StyledRootContainer className="root-container">
       <Head>
         <title>Selectora Martínez | Soluciones en personal doméstico</title>
         <link rel="icon" href="/favicon.ico" />
@@ -24,15 +24,20 @@ export default function Home() {
       <main className="home">
         <IndexCarousel />
       </main>
-    </div>
+    </StyledRootContainer>
   )
 }
 
+const StyledRootContainer = styled.main`
+  overflow: hidden;
+`;
+
 const StyledIndexCarousel = styled.div`
-    width: 100%;
+    width: 300vw;
     height: 100%;
     flex-grow: 1;
     background: black;
+    display: flex;
     .overlay,
     .middle,
     .underlay {

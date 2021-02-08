@@ -139,6 +139,37 @@ const StyledNuestrosServicios = styled.section`
     ${'' /* background-image: url('./classy-fabric.png'); */}
     background-color: rgba(0,0,0,.6);
     height: 100%;
+    @media screen and (max-width: 1070px) {
+        padding: 0;
+        .services-viewer {
+            flex-direction: column;
+            .service-sidebar {
+                height: unset !important;
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    li {
+                        display: inline-block;
+                        border-bottom: 5px solid black;
+                        font-size: .9rem !important;
+                        text-align: center;
+                        flex-grow: 1;
+                        &.selected {
+                            font-weight: normal;
+                            opacity: 1;
+                            background: linear-gradient(0deg, rgba(255,255,255,.2), transparent) !important;
+                            border-left: none !important;
+                            border-bottom: 5px solid ${({Colors}) => (Colors.mainBlue)};
+                        }
+                    }
+                }
+            }
+            .service-image {
+                height: 240px !important;
+            }
+        }
+    }
     .services-viewer {
         animation: ${fadeIn} .5s ease-out;
         display: flex;
@@ -170,8 +201,8 @@ const StyledNuestrosServicios = styled.section`
                         opacity: 1;
                         background: linear-gradient(90deg, rgba(255,255,255,.2), transparent);
                         border-left: 5px solid ${({Colors}) => (Colors.mainBlue)};;
-                }
                     }
+                }
             }
         }
         .service-image {
