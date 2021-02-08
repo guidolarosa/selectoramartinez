@@ -87,11 +87,13 @@ const StyledHeader = styled.header`
                 align-items: center;
                 .styled-button-wrp {
                     margin-right: 2rem;
+                    color: white;
                 }
                 .whatsapp-wrp {
                     display: flex;
                     align-items: center;
                     white-space: nowrap;
+                    color: white;
                     svg {
                         margin-right: 5px;
                     }
@@ -101,11 +103,9 @@ const StyledHeader = styled.header`
     }
     .lower-header {
         height: 46px;
-        @media screen and (max-width: 1070px) {
-            border-bottom: 1px solid gray;
+        @media screen and (max-width: 1070px) { 
             & > .container {
-                width: unset;
-            }
+                width: unset !important;
         }
         ul {
             display: flex;
@@ -116,6 +116,9 @@ const StyledHeader = styled.header`
                 display: none;
                 width: unset;
                 padding: 0 24px;
+                li {
+                    margin-left: 24px;
+                }
                 &.mobile-show {
                     display: block;
                     background: black;
@@ -127,10 +130,6 @@ const StyledHeader = styled.header`
                         margin: 0;
                         font-size: 14px;
                     }
-                }
-            }
-                li {
-                    margin-left: 24px;
                 }
             }
             li {
@@ -156,6 +155,9 @@ const StyledHeader = styled.header`
             display: flex;
             align-content: center;
             justify-content: center;
+            @media screen and (min-width: 1070px) { 
+                display: none;
+            }
         }
     }
     * {
