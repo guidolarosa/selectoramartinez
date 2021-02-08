@@ -106,6 +106,7 @@ const StyledHeader = styled.header`
         @media screen and (max-width: 1070px) { 
             & > .container {
                 width: unset !important;
+            }
         }
         ul {
             display: flex;
