@@ -127,6 +127,7 @@ const StyledHeader = styled.header`
                     backdrop-filter: blur(5px);
                     opacity: 0;
                     transition: 0.5s ease-in-out opacity;
+                    pointer-events: none;
                 }
                 &.show-underlay {
                     &:after {
