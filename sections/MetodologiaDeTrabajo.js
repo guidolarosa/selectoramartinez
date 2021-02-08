@@ -55,6 +55,9 @@ const StyledMetodologiaDeTrabajo = styled.section`
     background-image: url('./classy-fabric.png');
     background-color: rgba(0,0,0,.3);
     height: 100%;
+    @media screen and (max-width: 1070px) {
+        padding: 0;
+    }
     .metodologia-de-trabajo {
         animation: ${fadeIn} .5s ease-out;
         box-shadow: 0 0 10px 2px rgba(0,0,0,.2);

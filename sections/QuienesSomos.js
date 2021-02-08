@@ -46,6 +46,15 @@ const StyledQuienesSomos = styled.section`
     display: flex;
     background-image: url('./classy-fabric.png');
     background-color: rgba(0,0,0,.3);
+    @media screen and (max-width: 1070px) {
+        padding: 0;
+        .quienes-somos {
+            flex-direction: column;
+            .picture-container {
+                height: 240px !important;
+            }
+        }
+    }
     .quienes-somos {
         animation: ${fadeIn} .5s ease-out;
         box-shadow: 0 0 10px 2px rgba(0,0,0,.2);

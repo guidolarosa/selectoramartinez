@@ -44,7 +44,7 @@ const StyledFloatingLinks = styled.div`
     z-index: 1;
     @media screen and (max-width: 1070px) {
         top: unset;
-        bottom: -3px;
+        bottom: -5px;
         flex-direction: row;
         right: 20px;
         height: unset;

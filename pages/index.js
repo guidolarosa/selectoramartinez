@@ -28,7 +28,7 @@ export default function Home() {
   )
 }
 
-const StyledRootContainer = styled.main`
+const StyledRootContainer = styled.div`
   overflow: hidden;
 `;
 
@@ -38,6 +38,9 @@ const StyledIndexCarousel = styled.div`
     flex-grow: 1;
     background: black;
     display: flex;
+    @media screen and (max-width: 1070px) { 
+      height: calc(100vh - 195px);
+    }
     .overlay,
     .middle,
     .underlay {
