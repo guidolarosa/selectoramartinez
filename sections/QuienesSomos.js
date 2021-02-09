@@ -1,9 +1,14 @@
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
+import Head from 'next/head';
 
 export default function QuienesSomos() {
     return (
         <StyledQuienesSomos className="container" Colors={Colors}>
+            <Head>
+                <title>Selectora Martinez - Quienes somos</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className="quienes-somos container regular-padding">
                 <div className="picture-container">
 
@@ -69,6 +74,7 @@ const StyledQuienesSomos = styled.section`
             font-size: 28px;
             font-weight: 400;
             border-bottom: 1px solid rgba(0,0,0,.3);
+            padding-bottom: 10px;
         }
         p {
             margin-bottom: 12px;

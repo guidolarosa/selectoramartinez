@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Head from 'next/head';
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
 import {services} from './../utils/uiconstants';
@@ -87,6 +88,10 @@ donde desee con seguridad y siempre a tiempo. </p>
 
     return (
         <StyledNuestrosServicios selectedService={selectedService} className="container" Colors={Colors}>
+            <Head>
+                <title>Selectora Martinez - Nuestros servicios</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className="services-viewer container regular-padding">
                 <div className="service-sidebar">
                     <ul>
@@ -241,6 +246,7 @@ const StyledNuestrosServicios = styled.section`
                 h2 {
                     margin-bottom: 24px;
                     font-size: 28px;
+                    padding-bottom: 10px;
                     font-weight: 400;
                     border-bottom: 1px solid rgba(0,0,0,.3);
                 }

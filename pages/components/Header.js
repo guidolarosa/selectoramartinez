@@ -124,14 +124,13 @@ const StyledHeader = styled.header`
                     left: 0;
                     top: 0;
                     z-index: -1;
-                    backdrop-filter: blur(5px);
                     opacity: 0;
                     transition: 0.5s ease-in-out opacity;
                     pointer-events: none;
                 }
                 &.show-underlay {
                     &:after {
-                        opacity: .5;
+                        opacity: .8;
                     }
                 }
             }

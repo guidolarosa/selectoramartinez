@@ -1,9 +1,14 @@
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
+import Head from 'next/head';
 
 export default function NuestrosServicios() {
     return (
         <StyledMetodologiaDeTrabajo className="container" Colors={Colors}>
+            <Head>
+                <title>Selectora Martinez - Metodología de trabajo</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className="metodologia-de-trabajo container regular-padding">
                 <h2>Metodología de trabajo</h2>
                 <section>
@@ -70,6 +75,7 @@ const StyledMetodologiaDeTrabajo = styled.section`
             font-size: 28px;
             font-weight: 400;
             border-bottom: 1px solid rgba(0,0,0,.3);
+            padding-bottom: 10px;
         }
         p {
             margin-bottom: 12px;

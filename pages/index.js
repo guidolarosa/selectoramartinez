@@ -1,13 +1,16 @@
 import Head from 'next/head'
 import Header from './components/Header';
 import styled from 'styled-components';
-
+import Colors from './../utils/Colors';
 
 export default function Home() {
 
   const IndexCarousel = () => {
     return (
-        <StyledIndexCarousel>
+        <StyledIndexCarousel Colors={Colors}>
+            <div className="carousel-text-wrp">
+              CUIDADORAS
+            </div>
             <div className="overlay"></div>
             <div className="middle"></div>
             <div className="underlay"></div>
@@ -38,8 +41,28 @@ const StyledIndexCarousel = styled.div`
     flex-grow: 1;
     background: black;
     display: flex;
+    position: relative;
     @media screen and (max-width: 1070px) { 
       height: calc(100vh - 195px);
+    }
+    .carousel-text-wrp {
+      position: absolute;
+      color: white;
+      font-size: 5rem;
+      text-align: center;
+      bottom: 2rem;
+      text-shadow: 0 0 10px rgba(0,0,0,.3);
+      font-weight: 200;
+      margin: 0;
+      line-height: 7rem;
+      background: black;
+      padding: 0 4rem;
+      border-right: 10px solid ${({Colors}) => (Colors.mainBlue)};
+      @media screen and (max-width: 1070px) { 
+        width: 90vw;
+        font-size: 2.6rem;
+        padding: 0 1rem;
+      }
     }
     .overlay,
     .middle,
@@ -50,6 +73,7 @@ const StyledIndexCarousel = styled.div`
     .overlay {
       background-image: url('./cuidadoras_nt.png');
       background-size: cover;
+      background-position: center;
     }
 `;
 
