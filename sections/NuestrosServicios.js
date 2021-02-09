@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import Head from 'next/head';
+import Button from '../pages/components/Button';
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
-import {services} from './../utils/uiconstants';
+import {services, labels} from './../utils/uiconstants';
 
 export default function NuestrosServicios() {
     const [selectedService, setSelectedService] = useState('mucamas');
@@ -21,6 +22,12 @@ export default function NuestrosServicios() {
         necesita un cuidado particular, por eso <b>nuestro servicio es totalmente personalizado</b> y nos avocamos exclusivamente a la
         búsqueda y selección de personal doméstico.</p>
                 </div>
+                <Button 
+                    element="link" 
+                    label={labels.headerCTA} 
+                    href={'#'} 
+                    variant="primary" 
+                />
             </div>
         )
     }
@@ -33,6 +40,12 @@ export default function NuestrosServicios() {
                     <p>Contamos con acompañantes, cuidadoras y enfermeras con cama, con retiro y eventuales. Contáctenos y entreviste personal en menos de 24 hs. Nuestro equipo especializado, con más de veinte años de experiencia en el rubro lo guiará durante todo el proceso para que encuentre el personal que su familia necesita y merece.</p>
                     <p>Un servicio rápido y a la altura de sus necesidades. </p>
                 </div>
+                <Button 
+                    element="link" 
+                    label={labels.headerCTA} 
+                    href={'#'} 
+                    variant="primary" 
+                />
             </div>
         )
     }
@@ -46,6 +59,12 @@ export default function NuestrosServicios() {
 confeccionar una serie de test pre-ocupacionales* especialmente diseñados para el servicio doméstico. </p>
                     <p className={'disclaimer'}>*Este servicio tiene un costo adicional.</p>
                 </div>
+                <Button 
+                    element="link" 
+                    label={labels.headerCTA} 
+                    href={'#'} 
+                    variant="primary" 
+                />
             </div>
         )
     }
@@ -58,6 +77,12 @@ confeccionar una serie de test pre-ocupacionales* especialmente diseñados para 
                     <p>La tranquilidad de contar con personal preparado para responder a cada una de sus necesidades, matrimoños de caseros,
 cuidadores y encargados de mantenimiento para estancias, casas quinta, casas de campo o de fin de semana. </p>
                 </div>
+                <Button 
+                    element="link" 
+                    label={labels.headerCTA} 
+                    href={'#'} 
+                    variant="primary" 
+                />
             </div>
         )
     }
@@ -70,6 +95,12 @@ cuidadores y encargados de mantenimiento para estancias, casas quinta, casas de 
                     <p>El placer y la tranquilidad de poder disfrutar una cena en familia o agasajar a sus invitados. Cocineras profesionales con
 cama, con retiro o eventuales. Los sabores del mundo a su mesa.  </p>
                 </div>
+                <Button 
+                    element="link" 
+                    label={labels.headerCTA} 
+                    href={'#'} 
+                    variant="primary" 
+                />
             </div>
         )
     }
@@ -82,6 +113,12 @@ cama, con retiro o eventuales. Los sabores del mundo a su mesa.  </p>
                     <p>Contrate un chofer con registro profesional y experiencia comprobable. Contrate tanquilidad y comodidad para llegar
 donde desee con seguridad y siempre a tiempo. </p>
                 </div>
+                <Button 
+                    element="link" 
+                    label={labels.headerCTA} 
+                    href={'#'} 
+                    variant="primary" 
+                />
             </div>
         )
     }
@@ -139,9 +176,8 @@ const fadeIn = keyframes`
 
 const StyledNuestrosServicios = styled.section`
     display: flex;
-    padding: 2rem 0;
+    padding: 48px 0;
     background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-    ${'' /* background-image: url('./classy-fabric.png'); */}
     background-color: rgba(0,0,0,.6);
     height: 100%;
     @media screen and (max-width: 1070px) {
@@ -243,6 +279,9 @@ const StyledNuestrosServicios = styled.section`
                 padding: 24px;
                 position: relative;
                 animation: ${fadeIn} .3s ease-out;
+                .styled-button-wrp {
+                    margin-top: 24px;
+                }
                 h2 {
                     margin-bottom: 24px;
                     font-size: 28px;

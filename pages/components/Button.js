@@ -29,6 +29,7 @@ const StyledButtonWrp = styled.div`
         line-height: 30px;
         font-size: 14px;
         transition: 0.2s ease-in-out box-shadow;
+        color: white;
         &:hover {
             box-shadow: 0 0 5px 1px ${({Colors}) => (Colors.mainBlue)};
         }
