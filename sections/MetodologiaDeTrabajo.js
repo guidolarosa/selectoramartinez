@@ -31,7 +31,7 @@ export default function NuestrosServicios() {
                         <h3>4 - Garantia de servicio</h3>
                         <p>En Selectora Martínez contamos con dos formas de contratación, la primera es <b>abonar el arancel correspondiente a un sueldo del personal (100%)* y en este caso le ofrecemos una garantía de derecho a reposición de personal por 12 meses.</b></p>
                         <p>La segunda forma de pago es <b>abonar el 50% de un sueldo del personal*</b>, obteniendo una garantía de derecho a reposición de personal por 3 meses.</p>
-                        <p className="disclaimer">* Este arancel no se descuenta del sueldo del persona.</p>
+                        <p className="disclaimer">* Este arancel no se descuenta del sueldo del personal.</p>
                     </div>
                 </section>
             </div>

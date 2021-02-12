@@ -28,7 +28,7 @@ export default function Home() {
                         <QuienesSomos />
                     ) : sanitizedPath == 'metodologia-de-trabajo' ? (
                         <MetodologiaDeTrabajo />
-                    ) : sanitizedPath == 'entrevista-personal' ? (
+                    ) : sanitizedPath == 'entreviste-personal' ? (
                         <EntrevistaPersonal />
                     ) : sanitizedPath == 'trabaje-con-nosotros' ? (
                         <TrabajeConNosotros />

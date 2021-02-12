@@ -48,18 +48,18 @@ const StyledIndexCarousel = styled.div`
     .carousel-text-wrp {
       position: absolute;
       color: white;
-      font-size: 5rem;
+      font-size: 8rem;
       text-align: center;
       bottom: 2rem;
       text-shadow: 0 0 10px rgba(0,0,0,.3);
       font-weight: 200;
       margin: 0;
       line-height: 7rem;
-      background: black;
-      padding: 0 4rem;
-      border-right: 10px solid ${({Colors}) => (Colors.mainBlue)};
+      font-style: italic;
+      display: inline-block;
+      text-align: center;
+      width: 100vw;
       @media screen and (max-width: 1070px) { 
-        width: 90vw;
         font-size: 2.6rem;
         padding: 0 1rem;
       }

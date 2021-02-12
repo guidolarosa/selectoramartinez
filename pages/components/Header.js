@@ -6,6 +6,7 @@ import Colors from '../../utils/Colors';
 import {labels, navigation} from '../../utils/uiconstants';
 import Button from './Button'
 import {FaWhatsapp} from 'react-icons/fa';
+import {BiLinkExternal} from 'react-icons/bi';
 import Hamburger from 'hamburger-react'
 
 
@@ -23,7 +24,7 @@ export default function Header() {
                     <Button 
                         element="link" 
                         label={labels.headerCTA} 
-                        href={'#'} 
+                        href={'./entreviste-personal'} 
                         variant="primary" 
                     />
                     <div className="whatsapp-wrp">
@@ -45,9 +46,18 @@ export default function Header() {
                     <ul className={`${isOpen ? 'mobile-show' : ''}`}>
                         {navigation.map((navItem) => (
                             <li onClick={() => {setIsOpen(false)}}className={`${router.asPath === '/' + navItem.url ? 'current' : ''}`}>
-                                <Link href={`/${navItem.url}`} title={navItem.name}>
-                                    {navItem.name} 
-                                </Link>
+                                {
+                                    navItem.type == 'external' ? (
+                                        <a className="external" target="_blank" href={navItem.url} title={navItem.name}>
+                                            {navItem.name}
+                                            <BiLinkExternal />
+                                        </a>
+                                    ) : (
+                                        <Link href={`/${navItem.url}`} title={navItem.name}>
+                                            {navItem.name} 
+                                        </Link>
+                                    )
+                                }
                             </li>
                         ))}
                     </ul>
@@ -167,6 +177,13 @@ const StyledHeader = styled.header`
                 font-size: 12px;
                 opacity: .8;
                 transition: 0.2s ease-in-out opacity;
+                .external {
+                    display: flex;
+                    align-items: center;
+                    svg {
+                        margin-left: .5rem;
+                    }
+                }
                 &:hover {
                     opacity: 1;
                 }

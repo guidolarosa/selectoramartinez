@@ -4,6 +4,8 @@ import Button from '../pages/components/Button';
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
 import {services, labels} from './../utils/uiconstants';
+import MainContainer from './../pages/components/MainContainer';
+import Card from './../pages/components/Card';
 
 export default function NuestrosServicios() {
     const [selectedService, setSelectedService] = useState('mucamas');
@@ -124,43 +126,45 @@ donde desee con seguridad y siempre a tiempo. </p>
     }
 
     return (
-        <StyledNuestrosServicios selectedService={selectedService} className="container" Colors={Colors}>
+        <StyledNuestrosServicios>
             <Head>
                 <title>Selectora Martinez - Nuestros servicios</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="services-viewer container regular-padding">
-                <div className="service-sidebar">
-                    <ul>
-                        {services.map((service) => (
-                            <li
-                                className={`${service == selectedService ? 'selected' : ''}`}
-                                onClick={() => {handleServiceClick(service)}}
-                            >
-                                <span>{service}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="service-image"></div>
-                <div className="service-description">
-                    {
-                        selectedService == 'mucamas' ? (
-                            <Mucamas />
-                        ) : selectedService == 'cuidadoras' ? (
-                            <Cuidadoras />
-                        ) : selectedService == 'niñeras' ? (
-                            <Niñeras />
-                        ) : selectedService == 'caseros' ? (
-                            <Caseros />
-                        ) : selectedService == 'cocineras' ? (
-                            <Cocineras />
-                        ) : selectedService == 'choferes' ? (
-                            <Choferes />
-                        ) : ''
-                    }
-                </div>
-            </div>
+            <StyledMainContainer selectedService={selectedService} className="container" Colors={Colors}>
+                <StyledCard Colors={Colors} className="services-viewer container regular-padding">
+                    <div className="service-sidebar">
+                        <ul>
+                            {services.map((service) => (
+                                <li
+                                    className={`${service == selectedService ? 'selected' : ''}`}
+                                    onClick={() => {handleServiceClick(service)}}
+                                >
+                                    <span>{service}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="service-image"></div>
+                    <div className="service-description">
+                        {
+                            selectedService == 'mucamas' ? (
+                                <Mucamas />
+                            ) : selectedService == 'cuidadoras' ? (
+                                <Cuidadoras />
+                            ) : selectedService == 'niñeras' ? (
+                                <Niñeras />
+                            ) : selectedService == 'caseros' ? (
+                                <Caseros />
+                            ) : selectedService == 'cocineras' ? (
+                                <Cocineras />
+                            ) : selectedService == 'choferes' ? (
+                                <Choferes />
+                            ) : ''
+                        }
+                    </div>
+                </StyledCard>
+            </StyledMainContainer>
         </StyledNuestrosServicios>
     )
 }
@@ -174,14 +178,15 @@ const fadeIn = keyframes`
     }
 `;
 
-const StyledNuestrosServicios = styled.section`
-    display: flex;
-    padding: 48px 0;
-    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-    background-color: rgba(0,0,0,.6);
+const StyledNuestrosServicios = styled.div`
     height: 100%;
     @media screen and (max-width: 1070px) {
-        padding: 0;
+        
+    } 
+`;
+
+const StyledMainContainer = styled(MainContainer)`
+    @media screen and (max-width: 1070px) {
         .services-viewer {
             flex-direction: column;
             .service-sidebar {
@@ -217,9 +222,9 @@ const StyledNuestrosServicios = styled.section`
         animation: ${fadeIn} .5s ease-out;
         display: flex;
         box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
+        padding: 0;
         .service-sidebar {
             height: 100%;
-            ${'' /* background: ${({Colors}) => (Colors.mainBlue)}; */}
             background: black;
             min-width: 180px;
             overflow-y: auto;
@@ -250,22 +255,24 @@ const StyledNuestrosServicios = styled.section`
         }
         .service-image {
             background-image: ${({selectedService}) => (
-                selectedService == 'mucamas' ? 'url(./mucamas_nt.png)' :
-                selectedService == 'cuidadoras' ? 'url(./cuidadoras_nt.png)' :
-                selectedService == 'niñeras' ? 'url(./niñeras_nt.png)' : 
-                selectedService == 'caseros' ? 'url(./niñeras_nt.png)' : 
-                selectedService == 'cocineras' ? 'url(./niñeras_nt.png)' : 
-                selectedService == 'choferes' ? 'url(./niñeras_nt.png)' : ''
+                selectedService == 'mucamas' ? 'url(./mucamas.jpg)' :
+                selectedService == 'cuidadoras' ? 'url(./cuidadoras.jpg)' :
+                selectedService == 'niñeras' ? 'url(./niñera.jpg)' : 
+                selectedService == 'caseros' ? 'url(caseros.jpg)' : 
+                selectedService == 'cocineras' ? 'url(./cocinera.jpg)' : 
+                selectedService == 'choferes' ? 'url(./chofer.jpg)' : ''
             )};
             background-position: ${({selectedService}) => (
-                selectedService == 'mucamas' ? 'center' :
-                selectedService == 'cuidadoras' ? 'center' :
-                selectedService == 'niñeras' ? 'center' : ''
+                selectedService == 'mucamas' ? '70% center' :
+                selectedService == 'cuidadoras' ? '40% center' :
+                selectedService == 'niñeras' ? '25% center' :
+                selectedService == 'caseros' ? '30% center' : 
+                selectedService == 'cocineras' ? '40% center' : 
+                selectedService == 'choferes' ? '70% center' : ''
             )};
             background-color: black;
             background-size: cover;
             background-repeat: no-repeat;
-            filter: grayscale(.5);
             min-width: 260px;
             height: 100%;
             position: relative;
@@ -303,5 +310,9 @@ const StyledNuestrosServicios = styled.section`
         }
     }
 `;
+
+const StyledCard = styled(Card)`
+
+`; 
 
 

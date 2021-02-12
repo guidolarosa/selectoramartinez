@@ -1,23 +1,28 @@
 export const navigation = [
     {
         name: 'Nuestros servicios',
-        url: 'nuestros-servicios'
+        url: 'nuestros-servicios',
+        type: 'internal'
     },
     {
-        name: 'Entrevista personal sin cargo',
-        url: 'entrevista-personal'
+        name: 'Entreviste personal sin cargo',
+        url: 'entreviste-personal',
+        type: 'internal'
     },
     {
         name: 'Trabaje con nosotros',
-        url: 'trabaje-con-nosotros'
+        url: 'https://forms.gle/VRtNHVD2j9ZwFhaFA',
+        type: 'external'
     },
     {
         name: 'Quiénes somos',
-        url: 'quienes-somos'
+        url: 'quienes-somos',
+        type: 'internal'
     },
     {
         name: 'Metodología de trabajo',
-        url: 'metodologia-de-trabajo'
+        url: 'metodologia-de-trabajo',
+        type: 'internal'
     }
 ]
 

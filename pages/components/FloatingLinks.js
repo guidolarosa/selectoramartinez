@@ -7,17 +7,17 @@ import {FiMail} from 'react-icons/fi';
 const socialLinks = [
     {
         name: 'WhatsApp',
-        href: '#',
+        href: 'https://wa.me/3400498589',
         component: FaWhatsapp
     },
     {
         name: 'Phone',
-        href: '#',
+        href: 'tel://+5493400498589',
         component: AiOutlinePhone
     },
     {
         name: 'Mail',
-        href: '#',
+        href: 'mailto:selectoramartinez@gmail.com',
         component: FiMail
     }
 ]
@@ -27,7 +27,9 @@ const FloatingLinks = () => {
         <StyledFloatingLinks Colors={Colors}>
             {socialLinks.map((socialLink) => (
                 <div className="social-link">
-                    <socialLink.component/>
+                    <a target="_blank" href={socialLink.href} title={socialLink.name}>
+                        <socialLink.component/>
+                    </a>
                 </div>
             ))}
         </StyledFloatingLinks>
@@ -46,8 +48,11 @@ const StyledFloatingLinks = styled.div`
         top: unset;
         bottom: -5px;
         flex-direction: row;
-        right: 20px;
+        right: ;
         height: unset;
+        left: 0;
+        width: 100%;
+        justify-content: center;
     }
     .social-link {
         background: ${({Colors}) => (Colors.mainBlue)};
