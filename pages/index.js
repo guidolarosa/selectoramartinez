@@ -74,7 +74,7 @@ const StyledIndexCarousel = styled.div`
         height: 100%;
     }
     .overlay {
-      background-image: url('./cuidadoras_nt.png');
+      background-image: url('./cuidadoras.png');
       background-size: cover;
       background-position: top;
       @media screen and (max-width: 1070px) { 
