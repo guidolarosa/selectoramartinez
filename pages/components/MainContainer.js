@@ -19,6 +19,7 @@ const StyledMainContainer = styled.section`
     background-position: center;
     @media screen and (max-width: 1070px) {
         padding: 0;
+        padding-top: 195px !important;
         .form-input-wrp {
             flex-direction: column;
             .form-col {
