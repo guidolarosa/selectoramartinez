@@ -258,7 +258,7 @@ const StyledMainContainer = styled(MainContainer)`
                 selectedService == 'mucamas' ? 'url(./mucamas.jpg)' :
                 selectedService == 'cuidadoras' ? 'url(./cuidadoras.jpg)' :
                 selectedService == 'niñeras' ? 'url(./niñera.jpg)' : 
-                selectedService == 'caseros' ? 'url(caseros.jpg)' : 
+                selectedService == 'caseros' ? 'url(caseros.png)' : 
                 selectedService == 'cocineras' ? 'url(./cocinera.jpg)' : 
                 selectedService == 'choferes' ? 'url(./chofer.jpg)' : ''
             )};
