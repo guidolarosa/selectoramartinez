@@ -1,8 +1,8 @@
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
 import Head from 'next/head';
-import MainContainer from './../pages/components/MainContainer';
-import Card from './../pages/components/Card';
+import MainContainer from '../components/MainContainer';
+import Card from '../components/Card';
 
 export default function QuienesSomos() {
     return (

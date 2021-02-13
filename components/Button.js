@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colors from '../../utils/Colors';
+import Colors from './../utils/Colors';
 
 export default function Button(props) {
     const {

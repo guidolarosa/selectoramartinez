@@ -2,8 +2,8 @@ import {useRouter} from 'next/router';
 import {useState} from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Colors from '../../utils/Colors';
-import {labels, navigation} from '../../utils/uiconstants';
+import Colors from '../utils/Colors';
+import {labels, navigation} from '../utils/uiconstants';
 import Button from './Button'
 import {FaWhatsapp} from 'react-icons/fa';
 import {BiLinkExternal} from 'react-icons/bi';

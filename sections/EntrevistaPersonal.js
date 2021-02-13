@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
-import MainContainer from './../pages/components/MainContainer';
-import Card from './../pages/components/Card';
-import FormContainer from './../pages/components/FormContainer';
-import {useState} from 'react';
-import { sendContactMail } from "../pages/components/networking/mail-api"; 
+import MainContainer from '../components/MainContainer';
+import Card from '../components/Card';
+import FormContainer from '../components/FormContainer';
+import { useState } from 'react';
+import { sendContactMail } from "../components/networking/mail-api"; 
 import { AiFillCheckSquare } from 'react-icons/ai';
 import { MdError } from 'react-icons/md';
 
@@ -137,13 +137,13 @@ export default function EntrevistaPersonal() {
                         {submitState == 'error' ? (
                             <span className="error">
                                 <MdError />
-                                Hubo un problema al enviar su mensaje. Por favor revise los datos e inténtelo de nuevo.
-                            </span> ) : (
+                                Hubo un problema al enviar su mensaje. Por favor revise los datos o inténtelo nuevamente a la brevedad.
+                            </span> ) : submitState == 'sent' ? (
                             <span className="success">
                                 <AiFillCheckSquare />
                                 Muchas gracias, su mensaje ha sido enviado.
                             </span>
-                        )}
+                        ) : ''}
                     </div>
                 </FormContainer>
             </StyledCard>
@@ -156,9 +156,11 @@ const StyledMainContainer = styled(MainContainer)`
 
 const StyledCard = styled(Card)`
     .submit-status {
+        margin-top: 1rem;
         span {
             display: flex;
             align-items: center;
+            font-size: .9rem;
             svg {
                 margin-right: .5rem;
                 position: relative;

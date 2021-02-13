@@ -1,5 +1,5 @@
 import styled, {keyframes} from 'styled-components';
-import Colors from './../../utils/Colors';
+import Colors from './../utils/Colors';
 
 const Card = (props) => {
     return (

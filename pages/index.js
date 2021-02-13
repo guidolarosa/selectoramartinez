@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Header from './components/Header';
+import Header from '../components/Header';
 import styled from 'styled-components';
 import Colors from './../utils/Colors';
-import FloatingLinks from './components/FloatingLinks';
+import FloatingLinks from '../components/FloatingLinks';
 import {useState, useEffect, useRef} from 'react';
 
 export default function Home() {

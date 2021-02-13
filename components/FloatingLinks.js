@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colors from './../../utils/Colors';
+import Colors from '../utils/Colors';
 import {FaWhatsapp} from 'react-icons/fa'
 import {AiOutlinePhone} from 'react-icons/ai';
 import {FiMail} from 'react-icons/fi';

@@ -1,11 +1,11 @@
 import {useState} from 'react';
 import Head from 'next/head';
-import Button from '../pages/components/Button';
+import Button from '../components/Button';
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
 import {services, labels} from './../utils/uiconstants';
-import MainContainer from './../pages/components/MainContainer';
-import Card from './../pages/components/Card';
+import MainContainer from '../components/MainContainer';
+import Card from '../components/Card';
 
 export default function NuestrosServicios() {
     const [selectedService, setSelectedService] = useState('mucamas');

@@ -2,9 +2,9 @@ import {useState, useEffect} from 'react';
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
 import Head from 'next/head';
-import MainContainer from './../pages/components/MainContainer';
-import FormContainer from './../pages/components/FormContainer';
-import Card from './../pages/components/Card';
+import MainContainer from '../components/MainContainer';
+import FormContainer from '../components/FormContainer';
+import Card from '../components/Card';
 
 export default function TrabajeConNosotros() {
     return (
