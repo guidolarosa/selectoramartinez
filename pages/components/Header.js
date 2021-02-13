@@ -44,8 +44,8 @@ export default function Header() {
                         </span>
                     </span>
                     <ul className={`${isOpen ? 'mobile-show' : ''}`}>
-                        {navigation.map((navItem) => (
-                            <li onClick={() => {setIsOpen(false)}}className={`${router.asPath === '/' + navItem.url ? 'current' : ''}`}>
+                        {navigation.map((navItem, i) => (
+                            <li key={i} onClick={() => {setIsOpen(false)}}className={`${router.asPath === '/' + navItem.url ? 'current' : ''}`}>
                                 {
                                     navItem.type == 'external' ? (
                                         <a className="external" target="_blank" href={navItem.url} title={navItem.name}>
@@ -74,6 +74,9 @@ const StyledHeader = styled.header`
     @media screen and (max-width: 1070px) { 
         position: fixed;
         width: 100%;
+    }
+    @media screen and (max-width: 1070px) and (max-height: 420px) { 
+        position: relative;
     }
     .top-header {
         border-bottom: 1px solid rgba(255,255,255,0.3);
@@ -117,6 +120,15 @@ const StyledHeader = styled.header`
                     .styled-button-wrp {
                         margin-right: 1rem !important;
                         margin-bottom: 0;
+                    }
+                }
+                @media screen and (max-width: 1070px) and (max-height: 420px) { 
+                    flex-direction: row;
+                    align-content: center;
+                    justify-content: center;
+                    .styled-button-wrp {
+                        margin-right: 1rem !important;
+                        margin-bottom: 0rem;
                     }
                 }
                 .styled-button-wrp {

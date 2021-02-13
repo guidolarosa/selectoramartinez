@@ -3,19 +3,77 @@ import Header from './components/Header';
 import styled from 'styled-components';
 import Colors from './../utils/Colors';
 import FloatingLinks from './components/FloatingLinks';
+import {useState, useEffect, useRef} from 'react';
 
 export default function Home() {
 
+  const [carouselStep, setCarouselStep] = useState(0);
+  const [delay, setDelay] = useState(5000);
+
+  function useInterval(callback, delay) {
+      const savedCallback = useRef();
+    
+      // Remember the latest callback.
+      useEffect(() => {
+        savedCallback.current = callback;
+      }, [callback]);
+    
+      // Set up the interval.
+      useEffect(() => {
+        function tick() {
+          savedCallback.current();
+        }
+        if (delay !== null) {
+          let id = setInterval(tick, delay);
+          return () => clearInterval(id);
+        }
+      }, [delay]);
+  }
+
+  useInterval(() => {
+    setCarouselStep(
+      carouselStep == carouselImages.length - 1 ? 0 : carouselStep + 1
+    )
+  } , delay);
+
+  const nextStep = () => {
+    if (carouselStep == carouselImages.length - 1) {
+      setCarouselStep(0);
+    } else {
+      setCarouselStep(carouselStep + 1)
+    }
+  }
+
+  const carouselImages = [
+    {
+      url: './cuidadoras.jpg',
+      text: 'Cuidadoras'
+    },
+    {
+      url: './mucamas.jpg',
+      text: 'Mucamas'
+    },
+    {
+      url: './niñera.jpg',
+      text: 'Niñeras'
+    }
+  ]
   const IndexCarousel = () => {
     return (
         <StyledIndexCarousel Colors={Colors}>
           <FloatingLinks />
-            <div className="carousel-text-wrp">
-              CUIDADORAS
+          <div className="carousel-text-wrp">
+            {carouselImages[carouselStep].text}
+          </div>
+          {carouselImages.map((item, index) => (
+            <div 
+              className={`carousel-img-container ${index == carouselStep ? 'current-step' : ''}`}
+              style={{
+                backgroundImage: `url(${item.url})`
+              }}
+              >
             </div>
-            <div className="overlay"></div>
-            <div className="middle"></div>
-            <div className="underlay"></div>
+          ))}
         </StyledIndexCarousel>
     )
 }
@@ -38,7 +96,7 @@ const StyledRootContainer = styled.div`
 `;
 
 const StyledIndexCarousel = styled.div`
-    width: 300vw;
+    width: 100vw;
     height: 100%;
     flex-grow: 1;
     background: ${({Colors}) => (Colors.black)};
@@ -61,22 +119,26 @@ const StyledIndexCarousel = styled.div`
       display: inline-block;
       text-align: center;
       width: 100vw;
+      z-index: 1000;
       @media screen and (max-width: 1070px) { 
         font-size: 2.9rem;
         padding: 0 1rem;
         bottom: 0;
       }
     }
-    .overlay,
-    .middle,
-    .underlay {
-        width: 100%;
-        height: 100%;
-    }
-    .overlay {
-      background-image: url('./cuidadoras.png');
+    .carousel-img-container {
       background-size: cover;
       background-position: top;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      opacity: 0;
+      transition: 1s ease-in-out opacity;
+      &.current-step {
+        opacity: 1;
+      }
       @media screen and (max-width: 1070px) { 
         background-position: 58% 160px;
       }

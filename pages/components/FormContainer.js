@@ -46,13 +46,14 @@ const StyledFormContainer = styled.form`
                 margin-bottom: 12px;
                 .form-label {
                     font-size: .8rem;
+                    display: none;
                 }
                 input {
                     height: 32px;
                 }
                 textarea {
                     padding: .5rem !important;
-                    height: 100px;
+                    height: 80px;
                 }
                 input,
                 textarea {

@@ -17,6 +17,12 @@ const StyledMainContainer = styled.section`
     background-color: rgba(0,0,0,.6);
     background-size: cover;
     background-position: center;
+    @media screen and (max-width: 1070px) and (max-height: 420px) { 
+        position: relative;
+        &&&& {
+            padding-top: 0 !important;
+        }
+    }
     @media screen and (max-width: 1070px) {
         padding: 0;
         padding-top: 195px !important;

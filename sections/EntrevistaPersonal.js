@@ -4,8 +4,65 @@ import styled, {keyframes} from 'styled-components';
 import MainContainer from './../pages/components/MainContainer';
 import Card from './../pages/components/Card';
 import FormContainer from './../pages/components/FormContainer';
+import {useState} from 'react';
+import { sendContactMail } from "../pages/components/networking/mail-api"; 
+import { AiFillCheckSquare } from 'react-icons/ai';
+import { MdError } from 'react-icons/md';
+
 
 export default function EntrevistaPersonal() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [zone, setZone] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
+
+    const [submitState, setSubmitState] = useState(undefined);
+
+    const onNameChange = (e) => {
+        setName(e.target.value)
+    }
+    const onEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+    const onZoneChange = (e) => {
+        setZone(e.target.value)
+    }
+    const onPhoneChange = (e) => {
+        setPhone(e.target.value)
+    }
+    const onMessageChange = (e) => {
+        setMessage(e.target.value);
+    }
+    const submitContactForm = async (e) => {
+        e.preventDefault();
+
+        const recipientMail = 'selectoramartinez@gmail.com';
+        const res = await sendContactMail(
+            recipientMail, 
+            name, 
+            email, 
+            zone, 
+            phone, 
+            message
+        );
+
+        if (res.status < 300) {
+            resetForm();
+            setSubmitState('sent');
+        } else {
+            setSubmitState('error');
+        }
+    }
+
+    const resetForm = () => {
+        setName('');
+        setPhone('');
+        setZone('');
+        setMessage('');
+        setEmail('');
+    }
+
     return (
         <StyledMainContainer className="container" Colors={Colors}>
             <Head>
@@ -20,37 +77,107 @@ export default function EntrevistaPersonal() {
                         <div className="form-col">
                             <label>
                                 <span className="form-label">Nombre</span>
-                                <input type="text" id="name" name="name"/>
+                                <input
+                                    type="text"
+                                    placeholder="Name"
+                                    value={name}
+                                    name="fname"
+                                    onChange={onNameChange} 
+                                />
                             </label>
                             <label>
                                 <span className="form-label">Mail</span>
-                                <input type="email" id="email" name="email"/>
+                                <input
+                                    type="emai"
+                                    placeholder="Email"
+                                    value={email}
+                                    name="email"
+                                    onChange={onEmailChange} 
+                                />
                             </label>
                             <label>
                                 <span className="form-label">Zona / Barrio de residencia</span>
-                                <input type="text" id="zone" name="zone"/>
+                                <input
+                                    type="text"
+                                    placeholder="Zona / Barrio de residencia"
+                                    value={zone}
+                                    name="zone"
+                                    onChange={onZoneChange} 
+                                />
                             </label>
                         </div>
                         <div className="form-col">
                             <label>
                                 <span className="form-label">Teléfono</span>
-                                <input type="text" id="name" name="name"/>
+                                <input
+                                    type="phone"
+                                    placeholder="Teléfono"
+                                    value={phone}
+                                    name="phone"
+                                    onChange={onPhoneChange} 
+                                />
                             </label>
                             <label>
                                 <span className="form-label">Su mensaje</span>
-                                <textarea type="text" id="message" name="message"/>
+                                <textarea
+                                    type="text"
+                                    placeholder="Su mensaje"
+                                    value={message}
+                                    name="message"
+                                    onChange={onMessageChange} 
+                                />
+                                
                             </label>
                         </div>
                     </div>
-                    <input className="submit-button" type="submit" value="Enviar" />
+                    <button className="submit-button" type="submit" onClick={submitContactForm}>
+                        Enviar
+                    </button>
+                    <div className="submit-status">
+                        {submitState == 'error' ? (
+                            <span className="error">
+                                <MdError />
+                                Hubo un problema al enviar su mensaje. Por favor revise los datos e inténtelo de nuevo.
+                            </span> ) : (
+                            <span className="success">
+                                <AiFillCheckSquare />
+                                Muchas gracias, su mensaje ha sido enviado.
+                            </span>
+                        )}
+                    </div>
                 </FormContainer>
             </StyledCard>
         </StyledMainContainer>
     )
 }
 
-const StyledMainContainer = styled(MainContainer)``;
+const StyledMainContainer = styled(MainContainer)`
+`;
 
-const StyledCard = styled(Card)``;
+const StyledCard = styled(Card)`
+    .submit-status {
+        span {
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: .5rem;
+                position: relative;
+                bottom: 1px;
+            }
+        }
+        .error {
+            color: rgb(235, 70, 59);
+            svg {
+                fill: rgb(235, 70, 59);
+            }
+        }
+        .success {
+            color: rgb(38 175 118);;
+            svg {
+                fill: rgb(38 175 118);;
+            }
+        }
+    }
+`;
 
 

@@ -257,7 +257,7 @@ const StyledMainContainer = styled(MainContainer)`
         .service-image {
             background-image: ${({selectedService}) => (
                 selectedService == 'mucamas' ? 'url(./mucamas.jpg)' :
-                selectedService == 'cuidadoras' ? 'url(./cuidadoras.png)' :
+                selectedService == 'cuidadoras' ? 'url(./cuidadoras.jpg)' :
                 selectedService == 'niñeras' ? 'url(./niñera.jpg)' : 
                 selectedService == 'caseros' ? 'url(caseros.png)' : 
                 selectedService == 'cocineras' ? 'url(./cocinera.jpg)' : 

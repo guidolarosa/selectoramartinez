@@ -47,7 +47,7 @@ const StyledFloatingLinks = styled.div`
     @media screen and (max-width: 1070px) {
         box-shadow: 0 -10px 20px rgba(0,0,0,.3);
         top: unset;
-        bottom: -5px;
+        bottom: 0;
         flex-direction: row;
         right: 0;
         height: unset;
@@ -57,6 +57,7 @@ const StyledFloatingLinks = styled.div`
         .social-link {
             flex-grow: 1;
             width: unset;
+            margin: 0 !important;
         }
     }
     .social-link {
