@@ -256,11 +256,11 @@ const StyledMainContainer = styled(MainContainer)`
         .service-image {
             background-image: ${({selectedService}) => (
                 selectedService == 'mucamas' ? 'url(./mucamas.jpg)' :
-                selectedService == 'cuidadoras' ? 'url(./cuidadoras.jpg)' :
+                selectedService == 'cuidadoras' ? 'url(./cuidadoras.png)' :
                 selectedService == 'niñeras' ? 'url(./niñera.jpg)' : 
                 selectedService == 'caseros' ? 'url(caseros.png)' : 
                 selectedService == 'cocineras' ? 'url(./cocinera.jpg)' : 
-                selectedService == 'choferes' ? 'url(./chofer.jpg)' : ''
+                selectedService == 'choferes' ? 'url(./chofer.png)' : ''
             )};
             background-position: ${({selectedService}) => (
                 selectedService == 'mucamas' ? '70% center' :
