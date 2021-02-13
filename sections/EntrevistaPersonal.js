@@ -5,7 +5,7 @@ import MainContainer from '../components/MainContainer';
 import Card from '../components/Card';
 import FormContainer from '../components/FormContainer';
 import { useState } from 'react';
-import { sendContactMail } from "../components/networking/mail-api"; 
+import sendContactMail from "../components/networking/mail-api"; 
 import { AiFillCheckSquare } from 'react-icons/ai';
 import { MdError } from 'react-icons/md';
 

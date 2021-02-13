@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export default sendContactMail = async (
+const sendContactMail = async (
     recipientMail, 
     name, 
     email, 
@@ -32,3 +32,5 @@ export default sendContactMail = async (
         return error
     }
 }
+
+export default sendContactMail;
