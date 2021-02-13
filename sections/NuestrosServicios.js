@@ -193,9 +193,10 @@ const StyledMainContainer = styled(MainContainer)`
                 height: unset !important;
                 padding-top: 8px !important;
                 margin: 0;
+                display: flex;
                 ul {
                     display: flex;
-                    flex-wrap: wrap;
+                    ${'' /* flex-wrap: wrap; */}
                     justify-content: space-between;
                     li {
                         display: inline-block;
