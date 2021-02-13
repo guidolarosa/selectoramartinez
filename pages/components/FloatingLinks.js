@@ -39,20 +39,25 @@ const FloatingLinks = () => {
 const StyledFloatingLinks = styled.div`
     position: fixed;
     right: 0;
-    top: calc(50% - 75px);
+    top: calc((100% + 25px) - 50% - 75px);
     display: flex;
     flex-direction: column;
-    height: 170px;
+    height: 150px;
     z-index: 1;
     @media screen and (max-width: 1070px) {
+        box-shadow: 0 -10px 20px rgba(0,0,0,.3);
         top: unset;
         bottom: -5px;
         flex-direction: row;
-        right: ;
+        right: 0;
         height: unset;
         left: 0;
         width: 100%;
         justify-content: center;
+        .social-link {
+            flex-grow: 1;
+            width: unset;
+        }
     }
     .social-link {
         background: ${({Colors}) => (Colors.mainBlue)};

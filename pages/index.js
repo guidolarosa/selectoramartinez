@@ -2,12 +2,14 @@ import Head from 'next/head'
 import Header from './components/Header';
 import styled from 'styled-components';
 import Colors from './../utils/Colors';
+import FloatingLinks from './components/FloatingLinks';
 
 export default function Home() {
 
   const IndexCarousel = () => {
     return (
         <StyledIndexCarousel Colors={Colors}>
+          <FloatingLinks />
             <div className="carousel-text-wrp">
               CUIDADORAS
             </div>
@@ -39,11 +41,11 @@ const StyledIndexCarousel = styled.div`
     width: 300vw;
     height: 100%;
     flex-grow: 1;
-    background: black;
+    background: ${({Colors}) => (Colors.black)};
     display: flex;
     position: relative;
     @media screen and (max-width: 1070px) { 
-      height: calc(100vh - 195px);
+      height: calc(100vh - 45px);
     }
     .carousel-text-wrp {
       position: absolute;
@@ -51,7 +53,7 @@ const StyledIndexCarousel = styled.div`
       font-size: 8rem;
       text-align: center;
       bottom: 2rem;
-      text-shadow: 0 0 10px rgba(0,0,0,.3);
+      text-shadow: 0 0 10px rgba(0,0,0,.6);
       font-weight: 200;
       margin: 0;
       line-height: 7rem;
@@ -60,8 +62,9 @@ const StyledIndexCarousel = styled.div`
       text-align: center;
       width: 100vw;
       @media screen and (max-width: 1070px) { 
-        font-size: 2.6rem;
+        font-size: 2.9rem;
         padding: 0 1rem;
+        bottom: 0;
       }
     }
     .overlay,
@@ -73,7 +76,10 @@ const StyledIndexCarousel = styled.div`
     .overlay {
       background-image: url('./cuidadoras_nt.png');
       background-size: cover;
-      background-position: center;
+      background-position: top;
+      @media screen and (max-width: 1070px) { 
+        background-position: 58% 160px;
+      }
     }
 `;
 

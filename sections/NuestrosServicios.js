@@ -27,7 +27,7 @@ export default function NuestrosServicios() {
                 <Button 
                     element="link" 
                     label={labels.headerCTA} 
-                    href={'#'} 
+                    href={'/entreviste-personal'} 
                     variant="primary" 
                 />
             </div>
@@ -45,7 +45,7 @@ export default function NuestrosServicios() {
                 <Button 
                     element="link" 
                     label={labels.headerCTA} 
-                    href={'#'} 
+                    href={'/entreviste-personal'} 
                     variant="primary" 
                 />
             </div>
@@ -64,7 +64,7 @@ confeccionar una serie de test pre-ocupacionales* especialmente diseñados para 
                 <Button 
                     element="link" 
                     label={labels.headerCTA} 
-                    href={'#'} 
+                    href={'/entreviste-personal'} 
                     variant="primary" 
                 />
             </div>
@@ -82,7 +82,7 @@ cuidadores y encargados de mantenimiento para estancias, casas quinta, casas de 
                 <Button 
                     element="link" 
                     label={labels.headerCTA} 
-                    href={'#'} 
+                    href={'/entreviste-personal'} 
                     variant="primary" 
                 />
             </div>
@@ -100,7 +100,7 @@ cama, con retiro o eventuales. Los sabores del mundo a su mesa.  </p>
                 <Button 
                     element="link" 
                     label={labels.headerCTA} 
-                    href={'#'} 
+                    href={'/entreviste-personal'} 
                     variant="primary" 
                 />
             </div>
@@ -118,7 +118,7 @@ donde desee con seguridad y siempre a tiempo. </p>
                 <Button 
                     element="link" 
                     label={labels.headerCTA} 
-                    href={'#'} 
+                    href={'/entreviste-personal'} 
                     variant="primary" 
                 />
             </div>
@@ -199,7 +199,7 @@ const StyledMainContainer = styled(MainContainer)`
                     justify-content: space-between;
                     li {
                         display: inline-block;
-                        border-bottom: 5px solid black;
+                        border-bottom: 5px solid ${({Colors}) => (Colors.black)};
                         font-size: .9rem !important;
                         text-align: center;
                         flex-grow: 1;
@@ -225,7 +225,7 @@ const StyledMainContainer = styled(MainContainer)`
         padding: 0;
         .service-sidebar {
             height: 100%;
-            background: black;
+            background: ${({Colors}) => (Colors.black)};
             min-width: 180px;
             overflow-y: auto;
             padding-top: 24px;
@@ -270,7 +270,7 @@ const StyledMainContainer = styled(MainContainer)`
                 selectedService == 'cocineras' ? '40% center' : 
                 selectedService == 'choferes' ? '70% center' : ''
             )};
-            background-color: black;
+            background-color: ${({Colors}) => (Colors.black)};
             background-size: cover;
             background-repeat: no-repeat;
             min-width: 260px;

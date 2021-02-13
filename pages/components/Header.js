@@ -128,11 +128,11 @@ const StyledHeader = styled.header`
             }
             nav {
                 position: relative;
-                background: black;
+                background: ${({Colors}) => (Colors.black)};
                 &:after {
                     position: absolute;
                     content: '';
-                    background: black;
+                    background: ${({Colors}) => (Colors.black)};
                     width: 100vw;
                     height: calc(100vh - 150px);
                     left: 0;
@@ -163,7 +163,7 @@ const StyledHeader = styled.header`
                 display: block;
                 transition: 0.5s ease-in-out all;
                 text-align: center;
-                background: black;
+                background: ${({Colors}) => (Colors.black)};
                 box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
                 margin-top: -1px;
                 top: calc(100% - 1px);
