@@ -6,7 +6,6 @@ import Card from './../pages/components/Card';
 import FormContainer from './../pages/components/FormContainer';
 
 export default function EntrevistaPersonal() {
-
     return (
         <StyledMainContainer className="container" Colors={Colors}>
             <Head>

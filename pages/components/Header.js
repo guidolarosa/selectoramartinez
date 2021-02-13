@@ -71,6 +71,10 @@ export default function Header() {
 const StyledHeader = styled.header`
     background: ${({Colors}) => (Colors.black)};
     z-index: 2;
+    @media screen and (max-width: 1070px) { 
+        position: fixed;
+        width: 100%;
+    }
     .top-header {
         border-bottom: 1px solid rgba(255,255,255,0.3);
         height: 82px;
@@ -130,7 +134,7 @@ const StyledHeader = styled.header`
                     content: '';
                     background: black;
                     width: 100vw;
-                    height: 100vh;
+                    height: calc(100vh - 150px);
                     left: 0;
                     top: 0;
                     z-index: -1;
@@ -155,7 +159,7 @@ const StyledHeader = styled.header`
                 padding: 24px 0;
                 position: absolute;
                 width: 100%;
-                right: 100%;
+                right: 0;
                 display: block;
                 transition: 0.5s ease-in-out all;
                 text-align: center;
@@ -163,12 +167,17 @@ const StyledHeader = styled.header`
                 box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
                 margin-top: -1px;
                 top: calc(100% - 1px);
+                clip: rect(0,100vw,0,0);
                 li {
                     margin: 0;
                     font-size: 16px !important;
+                    a {
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
                 &.mobile-show {
-                    right: 0%;
+                    clip: rect(0,100vw,300px,0);
                 }
             }
             li {

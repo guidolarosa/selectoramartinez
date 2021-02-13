@@ -2,16 +2,18 @@ import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
 import Head from 'next/head';
 import {useEffect} from 'react';
+import MainContainer from './../pages/components/MainContainer';
+import Card from './../pages/components/Card';
 
 export default function NuestrosServicios() {
     
     return (
-        <StyledMetodologiaDeTrabajo className="container" Colors={Colors}>
+        <StyledMainContainer className="container" Colors={Colors}>
             <Head>
                 <title>Selectora Martinez - Metodología de trabajo</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="metodologia-de-trabajo container regular-padding">
+            <StyledCard className="metodologia-de-trabajo container regular-padding">
                 <h2>Metodología de trabajo</h2>
                 <section>
                     <div className={'step'} data-aos="fade-up">
@@ -34,8 +36,8 @@ export default function NuestrosServicios() {
                         <p className="disclaimer">* Este arancel no se descuenta del sueldo del personal.</p>
                     </div>
                 </section>
-            </div>
-        </StyledMetodologiaDeTrabajo>
+            </StyledCard>
+        </StyledMainContainer>
     )
 }
 
@@ -48,48 +50,42 @@ const fadeIn = keyframes`
     }
 `;
 
-const StyledMetodologiaDeTrabajo = styled.section`
-    padding: 48px 0;
-    display: flex;
-    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-    background-color: rgba(0,0,0,.6);
+const StyledCard = styled(Card)`
+    animation: ${fadeIn} .5s ease-out;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
+    background: white;
+    padding: 2rem;
+    overflow-y: auto;
+    min-height: 0;
     height: 100%;
-    @media screen and (max-width: 1070px) {
-        padding: 0;
-    }
-    .metodologia-de-trabajo {
-        animation: ${fadeIn} .5s ease-out;
-        box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
-        background: white;
-        padding: 2rem;
-        overflow-y: auto;
-        min-height: 0;
-        height: 100%;
-        .step {
-            margin-bottom: 48px;
-            h3 {
-                font-weight: 400;
-                margin-bottom: 10px;
-            }
-        }
-        h2 {
-            margin-bottom: 24px;
-            font-size: 28px;
+    .step {
+        margin-bottom: 48px;
+        h3 {
             font-weight: 400;
-            border-bottom: 1px solid rgba(0,0,0,.3);
-            padding-bottom: 10px;
+            margin-bottom: 10px;
         }
-        p {
-            margin-bottom: 12px;
-            line-height: 25px;
-            font-size: 14px;
-            opacity: .6;
-            &.disclaimer {
-                font-size: 12px;
-                opacity: .5;
-            }
+    }
+    h2 {
+        margin-bottom: 24px;
+        font-size: 28px;
+        font-weight: 400;
+        border-bottom: 1px solid rgba(0,0,0,.3);
+        padding-bottom: 10px;
+    }
+    p {
+        margin-bottom: 12px;
+        line-height: 25px;
+        font-size: 14px;
+        opacity: .6;
+        &.disclaimer {
+            font-size: 12px;
+            opacity: .5;
         }
     }
 `;
 
-
+const StyledMainContainer = styled(MainContainer)`
+    @media screen and (max-width: 1070px) {
+        padding: 0;
+    }
+`;

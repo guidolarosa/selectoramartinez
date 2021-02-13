@@ -15,6 +15,8 @@ const StyledMainContainer = styled.section`
     display: flex;
     background-image: url("/bg.png");
     background-color: rgba(0,0,0,.6);
+    background-size: cover;
+    background-position: center;
     @media screen and (max-width: 1070px) {
         padding: 0;
         .form-input-wrp {
