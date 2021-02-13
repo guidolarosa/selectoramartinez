@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const sendContactMail = async (
+export default sendContactMail = async (
     recipientMail, 
     name, 
     email, 
