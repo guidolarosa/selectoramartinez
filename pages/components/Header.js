@@ -86,7 +86,10 @@ const StyledHeader = styled.header`
             justify-content: space-between;
             height: 100%;
             align-items: center;
-            @media screen and (max-width: 1070px) {
+            @media screen and (max-width: 1070px) { 
+                padding: 1rem 2rem;
+            }
+            @media screen and (max-width: 640px) {
                 width: unset;
                 flex-direction: column;
                 padding: 24px 0;
@@ -102,6 +105,20 @@ const StyledHeader = styled.header`
             .right-controls {
                 display: flex;
                 align-items: center;
+                @media screen and (max-width: 1070px) { 
+                    flex-direction: column;
+                    .styled-button-wrp {
+                        margin-right: 0 !important;
+                        margin-bottom: 1rem;
+                    }
+                }
+                @media screen and (max-width: 640px) { 
+                    flex-direction: row;
+                    .styled-button-wrp {
+                        margin-right: 1rem !important;
+                        margin-bottom: 0;
+                    }
+                }
                 .styled-button-wrp {
                     margin-right: 2rem;
                     color: white;
