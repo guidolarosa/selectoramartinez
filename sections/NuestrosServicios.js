@@ -286,6 +286,15 @@ const StyledMainContainer = styled(MainContainer)`
                 padding: 24px;
                 position: relative;
                 animation: ${fadeIn} .3s ease-out;
+                @media screen and (max-width: 1070px) { 
+                    .styled-button-wrp {
+                        a {
+                            font-size: 1.2rem;
+                            padding: .5rem 1rem;
+                            height: unset;
+                        }
+                    }
+                }
                 .styled-button-wrp {
                     margin-top: 24px;
                 }
