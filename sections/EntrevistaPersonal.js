@@ -157,6 +157,7 @@ const StyledMainContainer = styled(MainContainer)`
 const StyledCard = styled(Card)`
     .submit-status {
         margin-top: 1rem;
+        display: inline-block;
         span {
             display: flex;
             align-items: center;
@@ -165,6 +166,7 @@ const StyledCard = styled(Card)`
                 margin-right: .5rem;
                 position: relative;
                 bottom: 1px;
+                min-width: 1.1rem;
             }
         }
         .error {
