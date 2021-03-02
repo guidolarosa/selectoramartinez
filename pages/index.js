@@ -91,15 +91,6 @@ export default function Home() {
   )
 };
 
-const kenBurns = keyframes`
-  from {
-    background-size: auto 100%;
-  }
-  
-  to {
-    background-size: auto 110%;
-  }`;
-
 const fadeInOut = keyframes`
   0% {
     opacity: 0;
@@ -159,7 +150,6 @@ const StyledIndexCarousel = styled.div`
       height: 100%;
       opacity: 0;
       transition: 1s ease-in-out opacity;
-      animation: ${kenBurns} 5s linear infinite;
       &.current-step {
         opacity: 1;
       }

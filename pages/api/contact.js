@@ -1,5 +1,8 @@
 import nodemailer from "nodemailer"
 
+console.log(process.env.MAIL_USER)
+console.log(process.env.MAIL_PASS)
+
 const transporter = nodemailer.createTransport({
     host: "smtp.mailgun.org",
     port: 587,
