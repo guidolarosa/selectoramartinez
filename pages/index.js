@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Colors from './../utils/Colors';
 import FloatingLinks from '../components/FloatingLinks';
 import {useState, useEffect, useRef} from 'react';
@@ -89,7 +89,29 @@ export default function Home() {
       </main>
     </StyledRootContainer>
   )
-}
+};
+
+const kenBurns = keyframes`
+  from {
+    background-size: auto 100%;
+  }
+  
+  to {
+    background-size: auto 110%;
+  }`;
+
+const fadeInOut = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  10%, 90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }`;
 
 const StyledRootContainer = styled.div`
   overflow: hidden;
@@ -119,9 +141,10 @@ const StyledIndexCarousel = styled.div`
       display: inline-block;
       text-align: center;
       width: 100vw;
-      z-index: 1000;
+      z-index: 1;
+      animation: ${fadeInOut} 5s linear infinite;
       @media screen and (max-width: 1070px) { 
-        font-size: 2.9rem;
+        font-size: 3rem;
         padding: 0 1rem;
         bottom: 0;
       }
@@ -136,6 +159,7 @@ const StyledIndexCarousel = styled.div`
       height: 100%;
       opacity: 0;
       transition: 1s ease-in-out opacity;
+      animation: ${kenBurns} 5s linear infinite;
       &.current-step {
         opacity: 1;
       }
