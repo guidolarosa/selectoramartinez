@@ -25,8 +25,8 @@ const socialLinks = [
 const FloatingLinks = () => {
     return (
         <StyledFloatingLinks Colors={Colors}>
-            {socialLinks.map((socialLink) => (
-                <div className="social-link">
+            {socialLinks.map((socialLink, i) => (
+                <div key={i} className="social-link">
                     <a target="_blank" href={socialLink.href} title={socialLink.name}>
                         <socialLink.component/>
                     </a>

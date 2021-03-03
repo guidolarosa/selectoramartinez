@@ -134,6 +134,7 @@ const StyledIndexCarousel = styled.div`
       width: 100vw;
       z-index: 1;
       animation: ${fadeInOut} 5s linear infinite;
+      text-transform: uppercase;
       @media screen and (max-width: 1070px) { 
         font-size: 3rem;
         padding: 0 1rem;

@@ -1,16 +1,17 @@
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
+import mg from 'nodemailer-mailgun-transport';
 
 console.log(process.env.MAIL_USER)
 console.log(process.env.MAIL_PASS)
 
-const transporter = nodemailer.createTransport({
-    host: "smtp.mailgun.org",
-    port: 587,
+const auth = {
     auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS
+        api_key: process.env.MAIL_PASS,
+        domain: process.env.MAIL_USER
     }
-  });
+}
+
+let nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
 export default async (req, res) => {
     const { email, name, zone, phone, message, recipientMail } = req.body
@@ -36,7 +37,7 @@ const mailer = ({ email, name, zone, phone, message, recipientMail }) => {
     }
 
     return new Promise((resolve, reject) => {
-        transporter.sendMail(msg, (error, info) =>
+        nodemailerMailgun.sendMail(msg, (error, info) =>
             error ? reject(error) : resolve(info)
         )
     })
