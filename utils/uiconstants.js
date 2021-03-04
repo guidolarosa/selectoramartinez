@@ -11,8 +11,8 @@ export const navigation = [
     },
     {
         name: 'Trabaje con nosotros',
-        url: 'https://forms.gle/VRtNHVD2j9ZwFhaFA',
-        type: 'external'
+        url: 'trabaje-con-nosotros',
+        type: 'internal'
     },
     {
         name: 'Quiénes somos',

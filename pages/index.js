@@ -8,7 +8,7 @@ import {useState, useEffect, useRef} from 'react';
 export default function Home() {
 
   const [carouselStep, setCarouselStep] = useState(0);
-  const [delay, setDelay] = useState(5000);
+  const [delay, setDelay] = useState(1000);
 
   function useInterval(callback, delay) {
       const savedCallback = useRef();
@@ -123,7 +123,7 @@ const StyledIndexCarousel = styled.div`
       color: white;
       font-size: 8rem;
       text-align: center;
-      bottom: 2rem;
+      bottom: calc(50% - 2rem);
       text-shadow: 0 0 10px rgba(0,0,0,.6);
       font-weight: 200;
       margin: 0;
@@ -136,14 +136,14 @@ const StyledIndexCarousel = styled.div`
       animation: ${fadeInOut} 5s linear infinite;
       text-transform: uppercase;
       @media screen and (max-width: 1070px) { 
-        font-size: 3rem;
+        font-size: 3.5rem;
         padding: 0 1rem;
-        bottom: 0;
+        top: calc(50% );
       }
     }
     .carousel-img-container {
       background-size: cover;
-      background-position: top;
+      background-position: top center;
       width: 100%;
       position: absolute;
       top: 0;
@@ -155,7 +155,7 @@ const StyledIndexCarousel = styled.div`
         opacity: 1;
       }
       @media screen and (max-width: 1070px) { 
-        background-position: 58% 160px;
+        background-position: center 150px;
       }
     }
 `;
