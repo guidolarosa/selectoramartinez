@@ -1,8 +1,10 @@
 import Colors from './../utils/Colors';
 import styled, {keyframes} from 'styled-components';
+import {labels} from './../utils/uiconstants';
 import Head from 'next/head';
 import MainContainer from '../components/MainContainer';
 import Card from '../components/Card';
+import Button from '../components/Button';
 
 export default function QuienesSomos() {
     return (
@@ -15,12 +17,18 @@ export default function QuienesSomos() {
                 <div className="picture-container"/>
                 <div className="text-container">
                     <h2>Nuestra historia</h2>
-                    <p>Selectora Martínez es una empresa jóven, pero no <em>nueva</em></p>
+                    <p>Selectora Martínez es una empresa jóven, pero no nueva</p>
                     <p>Contamos con más de cien años de trayectoria en el rubro y <b>pertenecemos a una familia de pioneros en la búsqueda y selección de personal
-    doméstico</b> con presencia en <span className="underlined">Buenos Aires, Montevideo, Punta del Este</span>, y ahora también en <span className="underlined">Rosario</span>.</p>
+    doméstico</b> con presencia en <b>Buenos Aires, Montevideo, Punta del Este</b>, y ahora también en <b>Rosario</b>.</p>
                     <p>Nos especializamos en la búsqueda y selección de personal para casas particulares, brindamos un servicio totalmente personalizado y ofrecemos una garantía de servicio (reposición de personal) de tres meses o un año.</p>
                     <p>Mucamas, cuidadoras de adultos mayores, enfermeras, nocheras, acompañantes terapéuticas, niñeras, cocineras, jardineros, matrimonios de caseros y <b>todas las soluciones en personal doméstico.</b> Consúltenos y entreviste personal <b>sin cargo.</b></p>
                     <p>Confianza es poder contar con una empresa sólida y de trayectoria como Selectora Martínez.</p>
+                    <Button 
+                        element="link" 
+                        label={labels.headerCTA} 
+                        href={'/entreviste-personal'} 
+                        variant="primary" 
+                    />
                 </div>
             </StyledCard>
         </StyledMainContainer>
@@ -49,12 +57,16 @@ const StyledCard = styled(Card)`
     .picture-container {
         min-width: 320px;
         height: 100%;
-        background-image: url('./mucamas.jpg');
-        background-size: cover;
-        background-position: 75% center;
+        background-image: url('./logo-header.png');
+        filter: invert(1);
+        background-size: 80%;
+        background-position: center;
+        background-repeat: no-repeat;
+
     }
     .text-container {
         padding: 2rem;
+        overflow: auto;
     }
     h2 {
         margin-bottom: 24px;
@@ -75,6 +87,9 @@ const StyledCard = styled(Card)`
             font-size: 12px;
             opacity: .5;
         }
+    }
+    .styled-button-wrp {
+        margin-top: 2rem;
     }
 `;
 
