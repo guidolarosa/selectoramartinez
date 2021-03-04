@@ -8,7 +8,7 @@ import {useState, useEffect, useRef} from 'react';
 export default function Home() {
 
   const [carouselStep, setCarouselStep] = useState(0);
-  const [delay, setDelay] = useState(1000);
+  const [delay, setDelay] = useState(5000);
 
   function useInterval(callback, delay) {
       const savedCallback = useRef();
