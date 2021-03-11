@@ -45,7 +45,7 @@ const mailer = ({ email, name, zone, phone, message, recipientMail }) => {
             </p>
             <p>
                 <strong>Mail: </strong>
-                <a href="mailto:${mail}">${mail}</a>
+                <a href="mailto:${email}">${email}</a>
                 </p>
             <p>
                 <strong>Teléfono: </strong>
