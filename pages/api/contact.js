@@ -34,13 +34,27 @@ const mailer = ({ email, name, zone, phone, message, recipientMail }) => {
         text: message,
         replyTo: from,
         html: `
-            <h2>Nuevo Mensaje/h2>
-            <h3>Ha ingresado un nuevo mensaje a través de la web./h3>
+            <h2>Nuevo Mensaje</h2>
+            <h3>Ha ingresado un nuevo mensaje a través de la web.</h3>
             <hr>
-            <p>${message}</p>
+            <blockquote>${message}</blockquote>
             <hr>
-            <p><strong>Barrio: </strong>${zone}</p>
-            <p><strong>Teléfono: </strong>${phone}</p>
+            <p>
+                <strong>Nombre: </strong>
+                <span>${name}</span>
+            </p>
+            <p>
+                <strong>Mail: </strong>
+                <a href="mailto:${mail}">${mail}</a>
+                </p>
+            <p>
+                <strong>Teléfono: </strong>
+                <a href="phone:${phone}" title="Llamar">${phone}</a>
+            </p>
+            <p>
+                <strong>Barrio: </strong>
+                <span>${zone}</span>
+            </p>
         `
     }
 
