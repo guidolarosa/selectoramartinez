@@ -33,7 +33,15 @@ const mailer = ({ email, name, zone, phone, message, recipientMail }) => {
         subject: `Nuevo mensaje de ${from}`,
         text: message,
         replyTo: from,
-        html: `<h2>Ha ingresado un nuevo mensaje a través de la web</h2><p>${message}</p>`
+        html: `
+            <h2>Nuevo Mensaje/h2>
+            <h3>Ha ingresado un nuevo mensaje a través de la web./h3>
+            <hr>
+            <p>${message}</p>
+            <hr>
+            <p><strong>Barrio: </strong>${zone}</p>
+            <p><strong>Teléfono: </strong>${phone}</p>
+        `
     }
 
     return new Promise((resolve, reject) => {
