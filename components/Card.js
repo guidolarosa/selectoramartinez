@@ -3,7 +3,7 @@ import Colors from './../utils/Colors';
 
 const Card = (props) => {
     return (
-        <StyledCard Colors={Colors} className={props.className}>
+        <StyledCard Colors={Colors} className={props.className} fitContent={props.fitContent}>
             {props.children}
         </StyledCard>
     )
@@ -25,6 +25,7 @@ const StyledCard = styled.section`
     min-height: 0;
     overflow-y: auto;
     padding: 24px;
+    height: ${(props) => (props.fitContent ? 'fit-content' : 'unset')};
     h2 {
         margin-bottom: 24px;
         font-size: 28px;

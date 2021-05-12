@@ -69,7 +69,7 @@ export default function EntrevistaPersonal() {
                 <title>Selectora Martinez - Entrevista personal sin cargo</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <StyledCard Colors={Colors} className="entreviste-personal container regular-padding">
+            <StyledCard fitContent Colors={Colors} className="entreviste-personal container regular-padding">
                 <h2>¿Está buscando personal?</h2>
                 <p>Complete este formulario y nos pondremos en contacto con usted a la brevedad para dar inicio al proceso de selección. </p>
                 <FormContainer>

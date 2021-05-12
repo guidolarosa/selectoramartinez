@@ -14,7 +14,7 @@ export default function TrabajeConNosotros() {
                 <title>Selectora Martinez - Trabaje con nosotros</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Card className="trabaje-con-nosotros container regular-padding">
+            <Card fitContent className="trabaje-con-nosotros container regular-padding">
                 <h2>¿Está buscando trabajo?</h2>
                 <div className="paragraph-container">
                     <p>En Selectora Martínez no le cobramos al personal ni le descontamos nada del sueldo, ni antes ni después de conseguirle un trabajo. </p>
